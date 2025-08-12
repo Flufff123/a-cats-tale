@@ -118,9 +118,8 @@ async def custom_site():
         total = track.len or 10  # avoid div0
         slot = ux(.060)/ total # 60%
 
-        screen.fill((255,255,255))
         pygame.draw.rect(screen,(10,10,10),( marginx-ux(10), marginy-uy(10), (total*slot)+ux(20), uy(110) ) )
-        pygame.draw.rect(screen,(122,27,114), ( marginx, marginy, track.pos*slot, uy(90)) )
+        pygame.draw.rect(screen,(0,255,0), ( marginx, marginy, track.pos*slot, uy(90)) )
 
     # wait until zip mount + overlayfs is complete
     while not track.ready:
@@ -238,7 +237,7 @@ config = {
     _sdl2 : "canvas",
     user_canvas : 0,
     user_canvas_managed : 0,
-    ume_block : 0,
+    ume_block : 1,
     can_close : 0,
     archive : "a-cats-tale",
     gui_debug : 3,
@@ -249,7 +248,7 @@ config = {
 
 </script>
 
-    <title>A Cat's Tale (please wait)...</title>
+    <title>a-cats-tale</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
